@@ -183,13 +183,23 @@ class TaskHelper extends Base
 
     public function renderScoreField(array $values, array $errors = array(), array $attributes = array())
     {
-        $attributes = array_merge(array('tabindex="14"'), $attributes);
-
+        $selected_value = isset($values['score']) ? $values['score'] : 1;
+    
         $html = $this->helper->form->label(t('Complexity'), 'score');
-        $html .= $this->helper->form->number('score', $values, $errors, $attributes);
-
+    
+        $html .= '<select name="score" id="score_select" class="form-select" tabindex="14">';
+    
+        $html .= '<option value="1"'.($selected_value == 1 ? ' selected' : '').'>1.- Fácil</option>';
+        $html .= '<option value="2"'.($selected_value == 2 ? ' selected' : '').'>2.- Normal</option>';
+        $html .= '<option value="3"'.($selected_value == 3 ? ' selected' : '').'>3.- Difícil</option>';
+    
+        $html .= '</select>';
+    
         return $html;
     }
+    
+    
+    
 
     public function renderReferenceField(array $values, array $errors = array(), array $attributes = array())
     {
