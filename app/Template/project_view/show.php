@@ -1,6 +1,7 @@
 <div class="page-header">
     <h2><?= t('Summary') ?></h2>
 </div>
+
 <ul class="panel">
     <li><strong><?= $project['is_active'] ? t('This project is open') : t('This project is closed') ?></strong></li>
 
@@ -17,7 +18,9 @@
         <li><?= $this->url->icon('rss-square', t('RSS feed'), 'FeedController', 'project', array('token' => $project['token']), false, '', '', true) ?></li>
         <li><?= $this->url->icon('calendar', t('iCal feed'), 'ICalendarController', 'project', array('token' => $project['token'])) ?></li>
     <?php else: ?>
+        <?php /* 
         <li><?= t('Public access disabled') ?></li>
+        */ ?>
     <?php endif ?>
 
     <?php if ($project['last_modified']): ?>
@@ -32,13 +35,15 @@
         <li><?= t('End date: ').$this->dt->date($project['end_date']) ?></li>
     <?php endif ?>
 
+    <?php /*
     <?php if ($project['per_swimlane_task_limits']): ?>
         <li><?= t('Column task limits are applied to each swimlane individually') ?></li>
     <?php else: ?>
         <li><?= t('Column task limits are applied across swimlanes') ?></li>
     <?php endif ?>
+    
 
-    <li><?= t('Task limit: ') ?><?= $project['task_limit'] ? $project['task_limit'] : '∞' ?></li>
+    <li><? =t('Task limit: ') ?><?= $project['task_limit'] ? $project['task_limit'] : '∞' ?></li> */ ?>
 </ul>
 
 <?php if (! empty($project['description'])): ?>
@@ -48,7 +53,6 @@
 
     <?= $this->hook->render('template:project:view:form', array('values' => $values, 'errors' => $errors)) ?>
 
-
     <article class="markdown">
         <?= $this->text->markdown($project['description']) ?>
     </article>
@@ -57,6 +61,7 @@
 <div class="page-header">
     <h2><?= t('Columns') ?></h2>
 </div>
+
 <?php if (empty($columns)): ?>
     <p class="alert alert-error"><?= t('Your board doesn\'t have any columns!') ?></p>
 <?php else: ?>
@@ -64,8 +69,10 @@
         <thead>
         <tr>
             <th class="column-40"><?= t('Column') ?></th>
+            <?php /*
             <th class="column-10"><?= t('Task limit') ?></th>
             <th class="column-20"><?= t('Visible on dashboard') ?></th>
+            */ ?>
             <th class="column-15"><?= t('Open tasks') ?></th>
             <th class="column-15"><?= t('Closed tasks') ?></th>
         </tr>
@@ -79,12 +86,14 @@
                         <?= $this->app->tooltipMarkdown($column['description']) ?>
                     <?php endif ?>
                 </td>
+                <?php /*
                 <td>
                     <?= $column['task_limit'] ?: '∞' ?>
                 </td>
                 <td>
                     <?= $column['hide_in_dashboard'] == 0 ? t('Yes') : t('No') ?>
                 </td>
+                */ ?>
                 <td>
                     <?= $column['nb_open_tasks'] ?>
                 </td>
