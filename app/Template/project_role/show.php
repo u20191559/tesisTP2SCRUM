@@ -17,6 +17,7 @@
                 <div class="dropdown">
                     <a href="#" class="dropdown-menu"><?= t('Restrictions for the role "%s"', $role['role']) ?> <i class="fa fa-caret-down"></i></a>
                     <ul>
+                    <?php /*
                         <li>
                             <?= $this->modal->medium('plus', t('Add a new project restriction'), 'ProjectRoleRestrictionController', 'create', array('project_id' => $project['id'], 'role_id' => $role['role_id'])) ?>
                         </li>
@@ -25,7 +26,9 @@
                         </li>
                         <li>
                             <?= $this->modal->medium('plus', t('Add a new column restriction'), 'ColumnRestrictionController', 'create', array('project_id' => $project['id'], 'role_id' => $role['role_id'])) ?>
-                        </li>
+                        </li> 
+                    */?>
+
                         <li>
                             <?= $this->modal->medium('edit', t('Edit this role'), 'ProjectRoleController', 'edit', array('project_id' => $project['id'], 'role_id' => $role['role_id'])) ?>
                         </li>

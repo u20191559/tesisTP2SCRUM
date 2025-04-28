@@ -1,3 +1,4 @@
+<?php /*
 <?php $has_project_creation_access = $this->user->hasAccess('ProjectCreationController', 'create'); ?>
 <?php $is_private_project_enabled = $this->app->config('disable_private_project', 0) == 0; ?>
 
@@ -19,3 +20,5 @@
         </ul>
     </div>
 <?php endif ?>
+
+*/ ?>
