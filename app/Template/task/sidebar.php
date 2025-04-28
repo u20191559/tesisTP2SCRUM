@@ -89,7 +89,7 @@
             <li>
                 <?= $this->modal->small('arrows', t('Move position'), 'TaskMovePositionController', 'show', array('task_id' => $task['id'])) ?>
             </li>
-        <?php endif ?>
+        <?php endif ?>*/ ?>
         <?php if ($this->projectRole->canChangeTaskStatusInColumn($task['project_id'], $task['column_id'])): ?>
             <?php if ($task['is_active'] == 1): ?>
                 <li>
@@ -100,7 +100,7 @@
                     <?= $this->modal->confirm('check-square-o', t('Open this task'), 'TaskStatusController', 'open', array('task_id' => $task['id'])) ?>
                 </li>
             <?php endif ?>
-        <?php endif ?>*/ ?>
+        <?php endif ?>
         <?php if ($this->projectRole->canRemoveTask($task)): ?>
             <li>
                 <?= $this->modal->confirm('trash-o', t('Remove'), 'TaskSuppressionController', 'confirm', array('task_id' => $task['id'], 'redirect' => 'board')) ?>
