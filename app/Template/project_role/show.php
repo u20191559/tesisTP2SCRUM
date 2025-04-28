@@ -28,7 +28,7 @@
                             <?= $this->modal->medium('plus', t('Add a new column restriction'), 'ColumnRestrictionController', 'create', array('project_id' => $project['id'], 'role_id' => $role['role_id'])) ?>
                         </li> 
                     */?>
-
+                
                         <li>
                             <?= $this->modal->medium('edit', t('Edit this role'), 'ProjectRoleController', 'edit', array('project_id' => $project['id'], 'role_id' => $role['role_id'])) ?>
                         </li>
