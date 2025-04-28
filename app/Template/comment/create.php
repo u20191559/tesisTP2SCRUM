@@ -25,12 +25,12 @@
         echo $this->form->label(t('Visibility:'), $formName);
         $attribute = [];
         $visibilityOptions['app-user'] = t('Standard users');
-        $visibilityOptions['app-manager'] = t('Application managers or more');
+         /*  $visibilityOptions['app-manager'] = t('Application managers or more'); */ 
     }
     ?>
 
     <?php if ($this->user->getRole() === Role::APP_ADMIN) {
-        $visibilityOptions['app-admin'] = t('Administrators');
+       /*  $visibilityOptions['app-admin'] = t('Administrators'); */ 
     }
     ?>
 
