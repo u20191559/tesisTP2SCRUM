@@ -59,15 +59,16 @@
             <?php /* <li <?= $this->app->checkMenuSelection('ProjectViewController', 'importTasks') ?>>
                 <?= $this->url->link(t('Import Tasks'), 'ProjectViewController', 'importTasks', array('project_id' => $project['id'])) ?>
                  </li> */ ?>
-
-            <?php /* <?php if ($project['is_active']):  */ ?>
-                    <?php /* <li>
+            <?php if ($project['is_active']): ?>
+                <li>
                     <?= $this->modal->confirmLink(t('Close this project'), 'ProjectStatusController', 'confirmDisable', array('project_id' => $project['id'])) ?>
-                <?php else: ?>
-                    <li>
+                </li>
+            <?php else: ?>
+                <li>
                     <?= $this->modal->confirmLink(t('Open this project'), 'ProjectStatusController', 'confirmEnable', array('project_id' => $project['id'])) ?>
-                <?php endif ?>
-            </li> */ ?>
+                </li>
+            <?php endif ?>
+
             <?php if ($this->user->hasProjectAccess('ProjectStatusController', 'remove', $project['id'])): ?>
                 <li>
                     <?= $this->modal->confirmLink(t('Remove'), 'ProjectStatusController', 'confirmRemove', array('project_id' => $project['id'])) ?>

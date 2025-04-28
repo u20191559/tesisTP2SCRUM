@@ -13,11 +13,11 @@
                 <?= $this->modal->medium('lock', t('New personal project'), 'ProjectCreationController', 'createPrivate') ?>
             </li>
         <?php endif ?>
-
+        <?php /*
         <?php if ($this->user->hasAccess('ProjectUserOverviewController', 'managers')): ?>
             <li><?= $this->url->icon('user', t('Users overview'), 'ProjectUserOverviewController', 'managers') ?></li>
         <?php endif ?>
-
+            */?>
         <?= $this->hook->render('template:project-list:menu:after') ?>
     </ul>
 </div>

@@ -14,12 +14,11 @@
                 </li>
             <?php endif ?>
 
-            <!-- Ocultando el ítem "Gestión de proyectos" -->
-            <!-- 
+
             <li>
                 <?= $this->url->icon('folder', t('Project management'), 'ProjectListController', 'show') ?>
             </li>
-            -->
+
 
             <!-- Ocultando el ítem "Mi flujo de actividad" -->
             <!-- 
